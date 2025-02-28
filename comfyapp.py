@@ -27,14 +27,14 @@ def hf_download():
     from huggingface_hub import hf_hub_download
 
     flux_model = hf_hub_download(
-        repo_id="Comfy-Org/flux1-schnell",
-        filename="flux1-schnell-fp8.safetensors",
+        repo_id="stabilityai/stable-diffusion-xl-base-1.0",
+        filename="sd_xl_base_1.0.safetensors",
         cache_dir="/cache",
     )
 
     # symlink the model to the right ComfyUI directory
     subprocess.run(
-        f"ln -s {flux_model} /root/comfy/ComfyUI/models/checkpoints/flux1-dev.safetensors",
+        f"ln -s {flux_model} /root/comfy/ComfyUI/models/checkpoints/sd_xl_base_1.0.safetensors",
         shell=True,
         check=True,
     )
